@@ -63,9 +63,9 @@ driver.find_element(By.XPATH,"//button[normalize-space()='OK']").click()
 driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div/div[3]/div[2]/div/div/a").click()
 
 #time.sleep(3)
-#upfile = driver.find_element(By.XPATH, "/html/body/div[3]/div/div/div[1]/div[3]/div/div/div[2]/form/div[1]/div[2]/div/div[1]/div[3]/div[2]").click()
-#upfile.send_keys(r"C:/Users/hardik.mandaviya/Desktop/Sample Tender (Laptop).pdf")
+
 time.sleep(12)
+#Need to click browser and need to select PDF file
 driver.find_element(By.NAME,"description").send_keys("new pdf")
 driver.find_element(By.ID,"submitBtn").click()
 driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div/div[4]/div[2]/div/div/a").click()
