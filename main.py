@@ -22,7 +22,7 @@ driver.find_element(By.XPATH,"//div[normalize-space()='Property']").click()
 driver.find_element(By.XPATH,"//a[normalize-space()='Create Property']").click()
 
 #create property page
-driver.find_element(By.ID,"propertyUniqueId").send_keys(6999588876)
+driver.find_element(By.ID,"propertyUniqueId").send_keys(6996911)
 driver.find_element(By.ID,"propertyTypeId").click()
 driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div[2]/form/div[1]/div[1]/div[2]/div[2]/div/select/option[2]").click()
 driver.find_element(By.ID,"propertySubTypeId").click()
@@ -62,7 +62,7 @@ driver.find_element(By.NAME,"isMainImage").click()
 driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div/form/div[1]/div[1]/div[2]/div/div/div/select/option[2]").click()
 #time.sleep(6)
 s = driver.find_element(By.NAME,"propertyImage")
-s.send_keys(r"C:\Users\hardik.mandaviya\Desktop\Pi7_Tool_a2 (1).jpeg")
+s.send_keys(r"C:\Users\lenovo\Pictures\Screenshots\Screenshot 2024-06-20 011933.png")
 #time.sleep(6)
 driver.find_element(By.ID,"submitBtn").click()
 #time.sleep(5)
@@ -80,11 +80,27 @@ driver.find_element(By.NAME,"sentTo").click()
 
 dropele = driver.find_element(By.NAME,"sentTo")
 select = Select(dropele)
-select.select_by_index(2)
+select.select_by_index(1)
 
 driver.find_element(By.ID,"remarks").send_keys("property has been sent")
 driver.find_element(By.ID,"submitBtn").click()
 driver.find_element(By.XPATH,"/html/body/div[5]/div/div/div[2]/button[2]").click()
+
+#logout and login for checker
+driver.find_element(By.XPATH,"//a[normalize-space()='Logout']").click()
+driver.find_element(By.ID,"username").send_keys("vaidehi.checker")
+driver.find_element(By.ID,"password").send_keys("Tender@123")
+driver.find_element(By.ID,"loginBtn").click()
 time.sleep(10)
+handles = driver.window_handles
+driver.switch_to.window(handles[-1])
+
+driver.find_element(By.ID,"action").click()
+driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div/div[2]/form/div[1]/div[5]/div/div/div/select/option[2]").click()
+driver.find_element(By.ID,"remarks").send_keys("property approved")
+driver.find_element(By.ID,"confirmed").click()
+driver.find_element(By.ID,"submitBtn").click()
+driver.find_element(By.XPATH,"/html/body/div[5]/div/div/div[2]/button[2]").click()
+time.sleep(5)
 
 
