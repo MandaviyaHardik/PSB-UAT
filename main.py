@@ -3,8 +3,11 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+
 
 driver = webdriver.Chrome()
+driver.implicitly_wait(7)
 driver.maximize_window()
 driver.get("https://uat.ebkray.in/")
 
@@ -19,7 +22,7 @@ driver.find_element(By.XPATH,"//div[normalize-space()='Property']").click()
 driver.find_element(By.XPATH,"//a[normalize-space()='Create Property']").click()
 
 #create property page
-driver.find_element(By.ID,"propertyUniqueId").send_keys(52118050)
+driver.find_element(By.ID,"propertyUniqueId").send_keys(69995876)
 driver.find_element(By.ID,"propertyTypeId").click()
 driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div[2]/form/div[1]/div[1]/div[2]/div[2]/div/select/option[2]").click()
 driver.find_element(By.ID,"propertySubTypeId").click()
@@ -45,26 +48,36 @@ driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div[2]
 driver.find_element(By.ID,"propertyPrice").send_keys("9900000")
 driver.find_element(By.ID,"submitBtn").click()
 
-time.sleep(5)
+#time.sleep(5)
 driver.find_element(By.XPATH,"/html/body/div[7]/div/div/div[2]/button[2]").click()
 driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div/form/div[2]/div/div/button[1]").click()
 driver.find_element(By.NAME,"isMainImage").click()
 driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div/form/div[1]/div[1]/div[2]/div/div/div/select/option[2]").click()
-time.sleep(6)
+#time.sleep(6)
 s = driver.find_element(By.NAME,"propertyImage")
 s.send_keys(r"C:\Users\hardik.mandaviya\Desktop\Pi7_Tool_a2 (1).jpeg")
-time.sleep(6)
+#time.sleep(6)
 driver.find_element(By.ID,"submitBtn").click()
-time.sleep(5)
+#time.sleep(5)
 driver.find_element(By.XPATH,"//button[normalize-space()='OK']").click()
 driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div/div[3]/div[2]/div/div/a").click()
 
-time.sleep(5)
-driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div/div[3]/form/div[1]/div[2]/div/div[1]/div[3]/div[2]/div/input").click()
-time.sleep(50)
-#upfile.send_keys(r"C:/Users/hardik.mandaviya/Downloads/View-Property-Details%20(1).pdf")
-#driver.find_element(By.NAME,"description").send_keys("new file")
-#driver.find_element(By.XPATH,"//button[@id='submitBtn']").click()
-#time.sleep(100)
+#time.sleep(3)
+#upfile = driver.find_element(By.XPATH, "/html/body/div[3]/div/div/div[1]/div[3]/div/div/div[2]/form/div[1]/div[2]/div/div[1]/div[3]/div[2]").click()
+#upfile.send_keys(r"C:/Users/hardik.mandaviya/Desktop/Sample Tender (Laptop).pdf")
+time.sleep(12)
+driver.find_element(By.NAME,"description").send_keys("new pdf")
+driver.find_element(By.ID,"submitBtn").click()
+driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div/div[4]/div[2]/div/div/a").click()
+driver.find_element(By.NAME,"sentTo").click()
+
+dropele = driver.find_element(By.NAME,"sentTo")
+select = Select(dropele)
+select.select_by_index(2)
+
+driver.find_element(By.ID,"remarks").send_keys("property has been sent")
+driver.find_element(By.ID,"submitBtn").click()
+driver.find_element(By.XPATH,"/html/body/div[5]/div/div/div[2]/button[2]").click()
+time.sleep(10)
 
 
