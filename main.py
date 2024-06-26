@@ -22,7 +22,7 @@ driver.find_element(By.XPATH,"//div[normalize-space()='Property']").click()
 driver.find_element(By.XPATH,"//a[normalize-space()='Create Property']").click()
 
 #create property page
-driver.find_element(By.ID,"propertyUniqueId").send_keys(6988811)
+driver.find_element(By.ID,"propertyUniqueId").send_keys(698899811)
 driver.find_element(By.ID,"propertyTypeId").click()
 driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div[2]/form/div[1]/div[1]/div[2]/div[2]/div/select/option[2]").click()
 driver.find_element(By.ID,"propertySubTypeId").click()
@@ -107,4 +107,12 @@ driver.find_element(By.ID,"submitBtn").click()
 driver.find_element(By.XPATH,"/html/body/div[5]/div/div/div[2]/button[2]").click()
 time.sleep(5)
 
+#logout and login for maker ( create auction )
+driver.find_element(By.XPATH,"//a[normalize-space()='Logout']").click()
+driver.find_element(By.ID,"username").send_keys("shreya")
+driver.find_element(By.ID,"password").send_keys("Tender@123")
+driver.find_element(By.ID,"loginBtn").click()
+
+#click on property
+driver.find_element(By.XPATH,"//div[normalize-space()='Property']").click()
 
