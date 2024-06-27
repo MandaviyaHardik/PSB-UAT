@@ -29,7 +29,7 @@ driver.find_element(By.XPATH,"//button[normalize-space()='OK']").click()
 driver.find_element(By.ID,"authorizedOfficerName").send_keys("hardik mandaviaya")
 driver.find_element(By.ID,"contactDetails").send_keys("1234567891")
 #select dates manually
-
+time.sleep(35)
 driver.find_element(By.ID,"startPrice").send_keys("55000")
 driver.find_element(By.ID,"decrementPrice").send_keys("1000")
 driver.find_element(By.ID,"decrementPriceExtension").send_keys("5000")
@@ -38,7 +38,7 @@ driver.find_element(By.ID,"extendedBy").send_keys("5")
 driver.find_element(By.XPATH,"//button[@id='submitBtn']").click()
 driver.find_element(By.XPATH,"//button[normalize-space()='OK']").click()
 
-#click on next
+driver.find_element(By.ID,"description").send_keys("")
 driver.find_element(By.XPATH,"//a[@class='ep-button xs-btn-block']").click()
 
 time.sleep(35)
