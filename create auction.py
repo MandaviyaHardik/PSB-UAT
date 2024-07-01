@@ -44,7 +44,6 @@ driver.find_element(By.ID,"extendedBy").send_keys("5")
 driver.find_element(By.XPATH,"//button[@id='submitBtn']").click()
 driver.find_element(By.XPATH,"//button[normalize-space()='OK']").click()
 
-time.sleep(3)
 #Upload Document
 
 time.sleep(10)

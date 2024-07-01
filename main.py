@@ -24,7 +24,7 @@ driver.find_element(By.XPATH, "//div[normalize-space()='Property']").click()
 driver.find_element(By.XPATH, "//a[normalize-space()='Create Property']").click()
 
 #create property page
-driver.find_element(By.ID, "propertyUniqueId").send_keys("66586423")
+driver.find_element(By.ID, "propertyUniqueId").send_keys("665866523")
 driver.find_element(By.ID, "propertyTypeId").click()
 driver.find_element(By.XPATH,"/html/body/div[3]/div/div/div[1]/div[3]/div/div[2]/form/div[1]/div[1]/div[2]/div[2]/div/select/option[2]").click()
 driver.find_element(By.ID, "propertySubTypeId").click()
