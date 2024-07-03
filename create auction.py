@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 driver = webdriver.Chrome()
-driver.implicitly_wait(7)
+driver.implicitly_wait(3)
 driver.maximize_window()
 driver.get("https://uat.ebkray.in/")
 
@@ -90,8 +90,7 @@ select.select_by_index(1)
 driver.find_element(By.ID,"remarks").send_keys("auction approved")
 driver.find_element(By.ID,"confirmed").click()
 driver.find_element(By.ID,"submitBtn").click()
-time.sleep(2)
+time.sleep(1)
 driver.find_element(By.XPATH,"//button[normalize-space()='OK']").click()
 
-
-time.sleep(5)
+driver.quit()
