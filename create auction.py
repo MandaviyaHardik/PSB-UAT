@@ -34,6 +34,10 @@ driver.find_element(By.ID,"authorizedOfficerName").send_keys("hardik mandaviaya"
 driver.find_element(By.ID,"contactDetails").send_keys("1234567891")
 #select dates manually
 
+readonly_field = driver.find_element(By.ID,"startPaymentDate")
+
+driver.execute_script("arguments[0].value = '05-07-2024 00:00';", readonly_field)
+
 time.sleep(30)
 
 driver.find_element(By.ID,"startPrice").send_keys("55000")
